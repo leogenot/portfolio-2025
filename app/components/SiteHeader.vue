@@ -8,7 +8,7 @@ const square = ref<HTMLElement | null>(null)
 const menuRefs = useTemplateRef('menus')
 const menusWithoutIndex = data.value?.filter((item) => item.slug !== '/')
 
-const { $gsap, $Draggable } = useNuxtApp()
+const { $gsap } = useNuxtApp()
 let tl: gsap.core.Timeline
 onMounted(async () => {
   await nextTick()
@@ -54,11 +54,6 @@ onMounted(async () => {
       },
       '<',
     )
-
-  $Draggable.create(square.value, {
-    type: 'rotation',
-    inertia: true,
-  })
 })
 
 onUnmounted(() => {
@@ -70,7 +65,7 @@ onUnmounted(() => {
   <nav ref="navigation" class="px-bleed fixed top-0 left-0 w-full">
     <div class="safari-blur relative inline-flex w-full justify-between py-4">
       <div class="logo inline-flex items-center gap-1">
-        <div ref="square" class="square h-3 w-3 bg-black lg:h-4 lg:w-4" />
+        <Logo class="h-3 w-3 lg:h-4 lg:w-4" />
         <NuxtLink ref="logo" to="/" aria-label="Home" class="text-lg uppercase lg:text-xl"
           >Léo Genot</NuxtLink
         >

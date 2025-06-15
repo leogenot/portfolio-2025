@@ -9,6 +9,7 @@ export default defineContentConfig({
                 title: z.string(),
                 slug: z.string(),
                 description: z.string(),
+                hero: z.string(),
                 projects: z.array(z.object({
                     title: z.string(),
                     slug: z.string(),
