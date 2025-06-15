@@ -28,12 +28,7 @@ watch(
 
 <template>
   <div>
-    <Hero :title="data.hero" />
-    <h2>All projects:</h2>
-    <ul>
-      <li v-for="project in data.projects" :key="project.slug">
-        <NuxtLink :to="`/${project.slug}`">{{ project.title }}</NuxtLink>
-      </li>
-    </ul>
+    <!-- <Hero :title="data.hero" /> -->
+    <pre>data: {{ data }}</pre>
   </div>
 </template>
