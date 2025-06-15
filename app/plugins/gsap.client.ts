@@ -5,6 +5,8 @@ export default defineNuxtPlugin(async () => {
     let ScrollTrigger: typeof _ScrollTrigger | undefined = undefined
     let SplitText = null
     let Flip = null
+    let Inertia = null
+    let Draggable = null
 
     gsap = (await import('gsap')).gsap
 
@@ -12,11 +14,14 @@ export default defineNuxtPlugin(async () => {
     ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger
     SplitText = (await import('gsap/SplitText')).SplitText
     Flip = (await import('gsap/Flip')).Flip
+    Inertia = (await import('gsap/InertiaPlugin')).InertiaPlugin
+    Draggable = (await import('gsap/Draggable')).Draggable
 
     // register the plugins
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(SplitText)
     gsap.registerPlugin(Flip)
+    gsap.registerPlugin(Draggable, Inertia);
 
     return {
         provide: {
@@ -24,6 +29,8 @@ export default defineNuxtPlugin(async () => {
             SplitText,
             ScrollTrigger,
             Flip,
+            Inertia,
+            Draggable
         },
     }
 })
