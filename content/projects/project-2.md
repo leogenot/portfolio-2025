@@ -1,6 +1,6 @@
 ---
-title: "Project 1"
-slug: "project-1"
+title: "Project 2"
+slug: "project-2"
 description: "A brief summary of the project."
 projectType: "Web App"
 technologies:

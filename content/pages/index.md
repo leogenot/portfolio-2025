@@ -1,5 +1,6 @@
 ---
 title: Home
+slug: /
 description: this is the homepage description
 projects:
   - {slug: project-1, title: project-1}
