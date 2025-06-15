@@ -2,18 +2,47 @@
 const { data } = await useAsyncData('navigation', () => {
   return queryCollection('page').all()
 })
-const logo = ref<HTMLElement | null>(null)
+const knob = ref<HTMLElement | null>(null)
 const chat = ref<HTMLElement | null>(null)
 const menuRefs = useTemplateRef('menus')
 const menusWithoutIndex = data.value?.filter((item) => item.slug !== '/')
 
-const { $gsap } = useNuxtApp()
+const { $gsap, $ScrollTrigger } = useNuxtApp()
+let knobTl: gsap.core.Timeline
 let tl: gsap.core.Timeline
-onMounted(async () => {
-  await nextTick()
+
+async function cleanupAnimation(): Promise<void> {
+  $ScrollTrigger.getById('knob-rotate')?.kill()
+  knobTl?.kill()
+  tl?.kill()
+  await Promise.resolve()
+}
+
+async function initKnobAnimation() {
+  if (!knob.value?.$el) return
+
+  const page = document.querySelector('.main-site')
+  console.log('main-site', page)
+  if (!page) return
+
+  knobTl = $gsap.timeline()
+  knobTl.to(knob.value?.$el, {
+    rotate: 360,
+    scrollTrigger: {
+      id: 'knob-rotate',
+      trigger: page,
+      markers: true,
+      scrub: true,
+      start: `top top`,
+      end: `bottom bottom`,
+    },
+  })
+}
+
+function initMenusAnimation() {
   tl = $gsap.timeline()
   tl.fromTo(
-    logo.value?.$el,
+    knob.value?.$el,
     {
       y: 50,
       opacity: 0,
@@ -54,10 +83,16 @@ onMounted(async () => {
       },
       '-=0.5',
     )
+}
+onMounted(async () => {
+  await nextTick()
+  await cleanupAnimation()
+  await initKnobAnimation()
+  initMenusAnimation()
 })
 
-onUnmounted(() => {
-  tl?.kill()
+onUnmounted(async () => {
+  await cleanupAnimation()
 })
 </script>
 
@@ -68,7 +103,7 @@ onUnmounted(() => {
   >
     <div class="relative inline-flex w-full justify-between overflow-clip">
       <div class="logo inline-flex items-center gap-1">
-        <NuxtLink ref="logo" to="/" aria-label="Home" class="">
+        <NuxtLink ref="knob" to="/" aria-label="Home" class="">
           <div class="knob relative">
             <div class="indicator relative origin-center">
               <div

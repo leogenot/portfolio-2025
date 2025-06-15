@@ -61,7 +61,7 @@ watch(innerWidth, debouncedSetup)
 </script>
 
 <template>
-  <main class="w-screen overflow-x-clip">
+  <main class="main-site w-screen overflow-x-clip">
     <VueLenis ref="lenisRef" :auto-raf="false" root :options="lenisOptions">
       <SiteHeader />
       <NuxtPage />
