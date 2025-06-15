@@ -115,7 +115,7 @@ onUnmounted(async () => {
         </NuxtLink>
       </div>
       <ul v-if="data" class="inline-flex items-center gap-12">
-        <li v-for="item in data" :key="item.slug" ref="menus" class="">
+        <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="">
           <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
         </li>
       </ul>
