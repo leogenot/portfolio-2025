@@ -105,28 +105,28 @@
 
   /* TEXT */
 
-  --text-heading-xxlarge: 32px;
-  --text-heading-xxlarge--line-height: 1.6;
+  --text-text-xxlarge: 32px;
+  --text-text-xxlarge--line-height: 1.6;
 
-  --text-heading-xlarge: 28px;
-  --text-heading-xlarge--line-height: 1.6;
+  --text-text-xlarge: 28px;
+  --text-text-xlarge--line-height: 1.6;
 
-  --text-heading-large: 24px;
-  --text-heading-large--line-height: 1.7;
+  --text-text-large: 24px;
+  --text-text-large--line-height: 1.7;
 
-  --text-heading-medium: 22px;
-  --text-heading-medium--line-height: 1.7;
+  --text-text-medium: 22px;
+  --text-text-medium--line-height: 1.7;
 
-  --text-heading-default: 20px;
-  --text-heading-default--line-height: 1.8;
+  --text-text-default: 20px;
+  --text-text-default--line-height: 1.8;
 
-  --text-heading-small: 18px;
-  --text-heading-small--line-height: 1.8;
+  --text-text-small: 18px;
+  --text-text-small--line-height: 1.8;
 
-  --text-heading-xsmall: 16px;
-  --text-heading-xsmall--line-height: 1.8;
+  --text-text-xsmall: 16px;
+  --text-text-xsmall--line-height: 1.8;
 
-  --text-heading-meta: 16px;
+  --text-text-meta: 16px;
   --text-heading-meta--line-height: 1;
 
   /**

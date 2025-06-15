@@ -2,10 +2,10 @@
 const { data } = await useAsyncData('navigation', () => {
   return queryCollection('page').all()
 })
-const border = ref<HTMLElement | null>(null)
 const logo = ref<HTMLElement | null>(null)
-const square = ref<HTMLElement | null>(null)
+const chat = ref<HTMLElement | null>(null)
 const menuRefs = useTemplateRef('menus')
+const menusWithoutIndex = data.value?.filter((item) => item.slug !== '/')
 
 const { $gsap } = useNuxtApp()
 let tl: gsap.core.Timeline
@@ -15,43 +15,44 @@ onMounted(async () => {
   tl.fromTo(
     logo.value?.$el,
     {
-      y: -50,
+      y: 50,
       opacity: 0,
     },
     {
       y: 0,
       opacity: 1,
-      duration: 0.5,
+      duration: 0.7,
       ease: 'power2.inOut',
     },
   )
     .fromTo(
       menuRefs.value,
       {
-        y: -50,
+        y: 50,
         opacity: 0,
       },
       {
         y: 0,
         opacity: 1,
-        duration: 0.5,
+        duration: 0.7,
         ease: 'power2.inOut',
         stagger: 0.1,
       },
-      '-=0.25',
+      '-=0.5',
     )
     .fromTo(
-      border.value,
+      chat.value,
       {
-        scaleX: 0,
+        y: 50,
+        opacity: 0,
       },
       {
-        scaleX: 1,
-        duration: 0.5,
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
         ease: 'power2.inOut',
-        stagger: 0.1,
       },
-      '<',
+      '-=0.5',
     )
 })
 
@@ -61,20 +62,29 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav ref="navigation" class="px-bleed fixed top-0 left-0 w-full">
-    <div class="safari-blur relative inline-flex w-full justify-between py-4">
+  <nav
+    ref="navigation"
+    class="px-bleed text-text-medium fixed top-0 left-0 flex h-16 w-full items-end font-sans font-semibold"
+  >
+    <div class="relative inline-flex w-full justify-between overflow-clip">
       <div class="logo inline-flex items-center gap-1">
-        <Logo class="h-3 w-3 lg:h-4 lg:w-4" />
-        <NuxtLink ref="logo" to="/" aria-label="Home" class="text-lg uppercase lg:text-xl"
-          >Léo Genot</NuxtLink
-        >
+        <NuxtLink ref="logo" to="/" aria-label="Home" class="">
+          <div class="knob relative">
+            <div class="indicator relative origin-center">
+              <div
+                class="indicator-inner absolute top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#FF5D1F]"
+              ></div>
+            </div>
+            <div class="h-9 w-9 rounded-full bg-black"></div>
+          </div>
+        </NuxtLink>
       </div>
-      <ul v-if="data" class="gap-gap inline-flex items-center">
-        <li v-for="item in data" :key="item.slug" ref="menus" class="text-lg uppercase lg:text-xl">
+      <ul v-if="data" class="inline-flex items-center gap-12">
+        <li v-for="item in data" :key="item.slug" ref="menus" class="">
           <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
         </li>
       </ul>
-      <div class="lets-chat underline">Lets Chat</div>
+      <div ref="chat" class="lets-chat underline">Lets Chat</div>
     </div>
   </nav>
 </template>
