@@ -1,6 +1,15 @@
 @import 'tailwindcss';
 
 @font-face {
+  font-family: 'Bebas Neue';
+  font-display: block;
+  src:
+    local('Bebas Neue'),
+    url('/fonts/BebasNeue-Regular.woff2') format('woff2'),
+    url('/fonts/BebasNeue-Regular.woff') format('woff'),
+    url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+@font-face {
   font-family: 'Noto Sans';
   font-display: block;
   src:
@@ -9,9 +18,6 @@
     url('/fonts/NotoSans-Regular.woff') format('woff'),
     url('/fonts/NotoSans-Regular.ttf') format('truetype');
 }
-/**
-* Space Mono
-*/
 @font-face {
   font-family: 'Space Mono';
   font-display: block;
@@ -38,42 +44,90 @@
   /**
   * typography
   */
+  --font-display: 'Bebas Neue', sans-serif;
   --font-sans: 'Noto Sans', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  --text-7xl: 9.375rem; /* 150px */
-  --text-7xl--line-height: 0.85;
+  /* HEADING */
 
-  --text-6xl: 5.5rem; /* 88px */
-  --text-6xl--line-height: 0.9;
+  --text-heading-xxlarge: 320px;
+  --text-heading-xxlarge--line-height: 1;
 
-  --text-5xl: 4.25rem; /* 68px */
-  --text-5xl--line-height: 0.9;
+  --text-heading-xlarge: 240px;
+  --text-heading-xlarge--line-height: 1;
 
-  --text-4xl: 3.5rem; /* 56px */
-  --text-4xl--line-height: 1.3;
+  --text-heading-large: 192px;
+  --text-heading-large--line-height: 1;
 
-  --text-3xl: 2.75rem; /* 44px */
-  --text-3xl--line-height: 1;
+  --text-heading-medium: 160px;
+  --text-heading-medium--line-height: 1;
 
-  --text-2xl: 2rem; /* 32px */
-  --text-2xl--line-height: 1;
+  --text-heading-small: 128px;
+  --text-heading-small--line-height: 1;
 
-  --text-xl: 1.25rem; /* 20px */
-  --text-xl--line-height: 1.05;
+  --text-heading-h1: 96px;
+  --text-heading-h1--line-height: 1.1;
 
-  --text-lg: 1.125rem; /* 18px */
-  --text-lg--line-height: 1.3;
+  --text-heading-h2: 80px;
+  --text-heading-h2--line-height: 1.1;
 
-  --text-base: 1rem; /* 16px */
-  --text-base--line-height: 1.4;
+  --text-heading-h3: 64px;
+  --text-heading-h3--line-height: 1.1;
 
-  --text-sm: 0.875rem; /* 14px */
-  --text-sm--letter-spacing: -0.01em;
-  --text-sm--line-height: 1.3;
+  --text-heading-h4: 48px;
+  --text-heading-h4--line-height: 1.3;
 
-  --text-xs: 0.75rem; /* 12px */
-  --text-xs--line-height: 1.3;
+  --text-heading-h5: 32px;
+  --text-heading-h5--line-height: 1.3;
+
+  --text-heading-h6: 24px;
+  --text-heading-h6--line-height: 1.3;
+
+  /* HEADING ALT */
+
+  --text-heading-alt-small: 80px;
+  --text-heading-alt-small--line-height: 1.2;
+
+  --text-heading-alt-h1: 64px;
+  --text-heading-alt-h1--line-height: 1.3;
+
+  --text-heading-alt-h2: 48px;
+  --text-heading-alt-h2--line-height: 1.3;
+
+  --text-heading-alt-h3: 40px;
+  --text-heading-alt-h3--line-height: 1.4;
+
+  --text-heading-alt-h4: 32px;
+  --text-heading-alt-h4--line-height: 1.3;
+
+  --text-heading-alt-h5: 26px;
+  --text-heading-alt-h5--line-height: 1.3;
+
+  /* TEXT */
+
+  --text-heading-xxlarge: 32px;
+  --text-heading-xxlarge--line-height: 1.6;
+
+  --text-heading-xlarge: 28px;
+  --text-heading-xlarge--line-height: 1.6;
+
+  --text-heading-large: 24px;
+  --text-heading-large--line-height: 1.7;
+
+  --text-heading-medium: 22px;
+  --text-heading-medium--line-height: 1.7;
+
+  --text-heading-default: 20px;
+  --text-heading-default--line-height: 1.8;
+
+  --text-heading-small: 18px;
+  --text-heading-small--line-height: 1.8;
+
+  --text-heading-xsmall: 16px;
+  --text-heading-xsmall--line-height: 1.8;
+
+  --text-heading-meta: 16px;
+  --text-heading-meta--line-height: 1;
 
   /**
   * colors

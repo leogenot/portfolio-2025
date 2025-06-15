@@ -6,7 +6,6 @@ const border = ref<HTMLElement | null>(null)
 const logo = ref<HTMLElement | null>(null)
 const square = ref<HTMLElement | null>(null)
 const menuRefs = useTemplateRef('menus')
-const menusWithoutIndex = data.value?.filter((item) => item.slug !== '/')
 
 const { $gsap } = useNuxtApp()
 let tl: gsap.core.Timeline
@@ -71,16 +70,11 @@ onUnmounted(() => {
         >
       </div>
       <ul v-if="data" class="gap-gap inline-flex items-center">
-        <li
-          v-for="item in menusWithoutIndex"
-          :key="item.slug"
-          ref="menus"
-          class="text-lg uppercase lg:text-xl"
-        >
+        <li v-for="item in data" :key="item.slug" ref="menus" class="text-lg uppercase lg:text-xl">
           <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
         </li>
       </ul>
-      <div ref="border" class="absolute bottom-0 left-0 h-[1px] w-full border bg-black" />
+      <div class="lets-chat underline">Lets Chat</div>
     </div>
   </nav>
 </template>
