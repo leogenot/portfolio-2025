@@ -79,15 +79,14 @@
   * colors
   */
   --color-black: #121212;
-  --color-dark-grey: #AAAAAA;
-  --color-light-grey: #D2D2D2;
-  --color-white: #F2F2F2;
+  --color-dark-grey: #aaaaaa;
+  --color-light-grey: #d2d2d2;
+  --color-white: #f2f2f2;
   --color-white-50: rgba(255, 255, 255, 0.5);
   --color-black-50: rgba(0, 0, 0, 0.5);
 
   --spacing-bleed: var(--grid-bleed);
   --spacing-gap: var(--grid-gap);
-
 }
 
 html {
@@ -106,12 +105,10 @@ body {
   color: var(--color-black);
 }
 
-
 ::selection {
   background: var(--color-black);
   color: var(--color-white);
 }
-
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
@@ -122,5 +119,14 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
 
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }
