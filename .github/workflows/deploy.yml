@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: "22"
       # Pick your own package manager and build script
-      - run: pnpm install
-      - run: pnpm run build
+      - run: yarn install
+      - run: yarn run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

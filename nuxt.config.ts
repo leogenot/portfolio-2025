@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@nuxt/eslint',
     'nuxt-vitalizer',
+    '@nuxt/content'
   ],
 
   css: ['~/assets/css/main.css'],
