@@ -58,13 +58,21 @@ const debouncedSetup = useDebounceFn(() => {
 }, 200)
 
 watch(innerWidth, debouncedSetup)
+
+const { isMobileOrTablet } = useDevice()
+
+const isMobile = computed(() => {
+  if (import.meta.server) return isMobileOrTablet
+  return innerWidth.value < 900
+})
 </script>
 
 <template>
-  <main class="main-site w-screen overflow-x-clip">
+  <main class="main-site min-h-screen w-screen overflow-x-clip">
+    <SiteHeader v-if="!isMobile" />
     <VueLenis ref="lenisRef" :auto-raf="false" root :options="lenisOptions">
-      <SiteHeader />
-      <NuxtPage />
+      <NuxtPage class="min-h-screen" />
     </VueLenis>
+    <SiteHeaderMobile v-if="isMobile" />
   </main>
 </template>
