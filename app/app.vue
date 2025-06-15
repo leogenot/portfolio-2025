@@ -5,8 +5,8 @@ const { $gsap, $ScrollTrigger } = useNuxtApp()
 
 const lenisOptions = computed(() => {
   return {
-    lerp: .7,
-    wheelMultiplier: .5,
+    lerp: 0.7,
+    wheelMultiplier: 0.5,
   }
 })
 
@@ -61,9 +61,7 @@ watch(innerWidth, debouncedSetup)
 </script>
 
 <template>
-  <main
-    class="w-screen overflow-x-clip"
-  >
+  <main class="w-screen overflow-x-clip">
     <VueLenis ref="lenisRef" :auto-raf="false" root :options="lenisOptions">
       <NuxtPage />
     </VueLenis>

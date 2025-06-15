@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data, error, status } = await useAsyncData(() =>
-  queryCollection('page').path('/pages').first(),
+  queryCollection('page').path('/pages/work').first(),
 )
 
 watch(
