@@ -5,8 +5,6 @@ export default defineNuxtPlugin(async () => {
     let ScrollTrigger: typeof _ScrollTrigger | undefined = undefined
     let SplitText = null
     let Flip = null
-    let CSSPlugin = null
-    let CustomEase = null
 
     gsap = (await import('gsap')).gsap
 
@@ -14,14 +12,10 @@ export default defineNuxtPlugin(async () => {
     ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger
     SplitText = (await import('gsap/SplitText')).SplitText
     Flip = (await import('gsap/Flip')).Flip
-    CSSPlugin = (await import('gsap/CSSPlugin')).CSSPlugin
-    CustomEase = (await import('gsap/CustomEase')).CustomEase
 
     // register the plugins
     gsap.registerPlugin(ScrollTrigger)
-    gsap.registerPlugin(CustomEase)
     gsap.registerPlugin(SplitText)
-    gsap.registerPlugin(CSSPlugin)
     gsap.registerPlugin(Flip)
 
     return {
@@ -30,7 +24,6 @@ export default defineNuxtPlugin(async () => {
             SplitText,
             ScrollTrigger,
             Flip,
-            CustomEase
         },
     }
 })

@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   devtools: { enabled: false },
   site: {
-    name: 'Leo Genot - Portfolio',
+    name: 'Léo Genot - Portfolio',
     url: 'https://leogenot.github.io',
   },
 
@@ -35,13 +35,6 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: ['shallowequal', 'lodash/startCase.js'],
-    },
-  },
-
-  image: {
-    provider: 'sanity',
-    sanity: {
-      projectId: 'qe6uzeuy',
     },
   },
 
