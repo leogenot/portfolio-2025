@@ -3,12 +3,12 @@ import tailwindcss from '@tailwindcss/vite'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  site: {
+    name: 'Leo Genot - Portfolio',
+    url: 'https://leogenot.github.io',
+  },
 
   runtimeConfig: {
-    public: {
-      siteName: 'Leo Genot Portfolio',
-      siteUrl: 'https://leogenot.github.io',
-    },
   },
 
   future: {
