@@ -33,6 +33,10 @@ useHead({
       name: 'theme-color',
       content: '#e6e6e6',
     },
+    {
+      name: 'google-site-verification',
+      content: 'nKPy2XQG9rBND-W_C_e0a-veDL_ZUmMHei3e12CGeDA',
+    },
   ],
   htmlAttrs: { lang: 'en' },
   link: [
