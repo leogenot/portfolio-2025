@@ -71,7 +71,13 @@ const isMobile = computed(() => {
   <main class="main-site min-h-screen w-screen overflow-x-clip">
     <SiteHeader v-if="!isMobile" />
     <VueLenis ref="lenisRef" :auto-raf="false" root :options="lenisOptions">
-      <NuxtPage class="min-h-screen" />
+      <NuxtPage
+        class="min-h-screen"
+        :transition="{
+          name: 'page',
+          mode: 'out-in',
+        }"
+      />
     </VueLenis>
     <SiteHeaderMobile v-if="isMobile" />
   </main>
