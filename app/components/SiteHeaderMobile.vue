@@ -120,7 +120,7 @@ onUnmounted(async () => {
           </NuxtLink>
         </div>
         <div ref="chat" class="lets-chat underline">Lets Chat</div>
-        <div class="gradient-blur-top" />
+        <!-- <div class="gradient-blur-top" /> -->
       </div>
       <div class="bottom-links pointer-events-auto relative w-full">
         <ul
@@ -131,7 +131,7 @@ onUnmounted(async () => {
             <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
           </li>
         </ul>
-        <div class="gradient-blur-bottom" />
+        <!-- <div class="gradient-blur-bottom" /> -->
       </div>
     </div>
   </nav>
