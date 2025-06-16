@@ -8,7 +8,7 @@ defineProps<{ data: TitleProps }>()
       <span v-if="data.trumpet" class="text-text-meta text-dark-grey font-mono lowercase"
         >({{ data.trumpet }})</span
       >
-      <span v-if="data.indicator" class="text-text-meta text-dark-grey font-mono lowercase">{{
+      <span v-if="data.indicator" class="text-text-meta font-mono lowercase">{{
         data.indicator
       }}</span>
     </div>
