@@ -31,7 +31,7 @@ async function initKnobAnimation() {
     scrollTrigger: {
       id: 'knob-rotate',
       trigger: page,
-      markers: true,
+      //markers: true,
       scrub: true,
       start: `top top`,
       end: `bottom-=64px bottom-=64px`,

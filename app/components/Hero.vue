@@ -48,7 +48,7 @@ async function initAnimation() {
           scrollTrigger: {
             id: 'titleAnimation',
             trigger: container.value,
-            markers: true,
+            //markers: true,
             start: `top 90%`,
             end: `bottom top`,
             toggleActions: 'play reverse play reverse',
