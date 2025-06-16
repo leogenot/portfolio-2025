@@ -21,6 +21,7 @@ defineProps<{ data: SplitScreenProps }>()
         :src="data.media.src"
         sizes="100vw sm:50vw"
         format="webp"
+        :alt="data.media.src || 'Image alt'"
         class="h-full w-full object-cover object-center"
       />
     </div>

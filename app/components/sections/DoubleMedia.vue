@@ -13,6 +13,7 @@ defineProps<{ data: DoubleMediaProps }>()
         :src="data.medias[0].src"
         sizes="100vw sm:50vw"
         format="webp"
+        :alt="data.medias[0].src || 'Image alt'"
         class="h-full w-full object-cover object-center"
       />
     </div>
@@ -25,6 +26,7 @@ defineProps<{ data: DoubleMediaProps }>()
         :src="data.medias[1].src"
         sizes="100vw sm:70vw"
         format="webp"
+        :alt="data.medias[1].src || 'Image alt'"
         class="h-full w-full object-cover object-center"
       />
     </div>
