@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data, error, status } = await useAsyncData(() =>
-  queryCollection('page').path('/pages/work').first(),
+  queryCollection('page').path('/pages/projects').first(),
 )
 
 watch(
@@ -28,11 +28,6 @@ watch(
 
 <template>
   <div>
-    <h2>All projects:</h2>
-    <ul>
-      <li v-for="project in data.projects" :key="project.slug">
-        <NuxtLink :to="`/${project.slug}`">{{ project.title }}</NuxtLink>
-      </li>
-    </ul>
+    <h2>Projects:</h2>
   </div>
 </template>
