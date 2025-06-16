@@ -1,89 +1,104 @@
 {
-"title": "Project 1",
-"slug": "/project-1",
-"description": "Project description",
-"pageBuilder": [
-{
-"type": "title",
-"title": "léo genot",
-"text": "Full-stack developer, I thrive in collaborative environments where design, engineering, and product come together."
-},
-{
-"type": "double-media",
-"medias": [
-{
-"type": "image",
-"src": "medias/me.jpg"
-},
-{
-"type": "image",
-"src": "medias/climb.jpg"
-}
-]
-},
-{
-"type": "title",
-"trumpet": "What i do",
-"indicator": "🤪",
-"title": "Recent work",
-"text": "These are the latest projects I worked on (they are very cool)"
-},
-{
-"type": "split-screen",
-"title": "Vildmarken",
-"text": "Nature preserve in Rødby.",
-"media": {
-"type": "image",
-"src": "medias/vildmarken/vildmarken.jpg"
-},
-"projectType": "website",
-"link": "vildmarken.dk",
-"techStack": [
-{
-"title": "Sanity CMS"
-},
-{
-"title": "Nuxt.js"
-}
-]
-},
-{
-"type": "split-screen",
-"title": "ORCA labs",
-"text": "Research on life with hearing loss.",
-"media": {
-"type": "image",
-"src": "medias/orca/orca.jpg"
-},
-"projectType": "website",
-"link": "orca-labs.net",
-"techStack": [
-{
-"title": "Worpdress"
-},
-{
-"title": "Laravel"
-}
-]
-},
-{
-"type": "split-screen",
-"title": "Spring/Summer",
-"text": "Spring/Summer agency website.",
-"media": {
-"type": "image",
-"src": "medias/springsummer/springsummer.jpg"
-},
-"projectType": "website",
-"link": "orca-labs.net",
-"techStack": [
-{
-"title": "Craft CMS"
-},
-{
-"title": "Nuxt.js"
-}
-]
-}
-]
+    "title": "Project 1",
+    "slug": "/project-1",
+    "description": "Project description",
+    "pageBuilder": [
+        {
+            "type": "title",
+            "data": {
+                "title": "léo genot",
+                "text": "Full-stack developer, I thrive in collaborative environments where design, engineering, and product come together."
+            }
+        },
+        {
+            "type": "double-media",
+            "data": {
+                "medias": [
+                    {
+                        "type": "image",
+                        "src": "medias/me.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "src": "medias/climb.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "title",
+            "data": {
+                "trumpet": "What i do",
+                "indicator": "🤪",
+                "title": "Recent work",
+                "text": "These are the latest projects I worked on (they are very cool)"
+            }
+        },
+        {
+            "type": "split-screen",
+            "data": {
+                "leftMedia": true,
+                "title": "Vildmarken",
+                "text": "Nature preserve in Rødby.",
+                "media": {
+                    "type": "image",
+                    "src": "medias/vildmarken/vildmarken.jpg"
+                },
+                "projectType": "website",
+                "link": "vildmarken.dk",
+                "techStack": [
+                    {
+                        "title": "Sanity CMS"
+                    },
+                    {
+                        "title": "Nuxt.js"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "split-screen",
+            "data": {
+                "leftMedia": false,
+                "title": "ORCA labs",
+                "text": "Research on life with hearing loss.",
+                "media": {
+                    "type": "image",
+                    "src": "medias/orca/orca.jpg"
+                },
+                "projectType": "website",
+                "link": "orca-labs.net",
+                "techStack": [
+                    {
+                        "title": "Worpdress"
+                    },
+                    {
+                        "title": "Laravel"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "split-screen",
+            "data": {
+                "leftMedia": true,
+                "title": "Spring/Summer",
+                "text": "Spring/Summer agency website.",
+                "media": {
+                    "type": "image",
+                    "src": "medias/springsummer/springsummer.jpg"
+                },
+                "projectType": "website",
+                "link": "springsummer.dk",
+                "techStack": [
+                    {
+                        "title": "Craft CMS"
+                    },
+                    {
+                        "title": "Nuxt.js"
+                    }
+                ]
+            }
+        }
+    ],
 }

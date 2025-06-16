@@ -6,7 +6,7 @@ const knob = ref<HTMLElement | null>(null)
 const chat = ref<HTMLElement | null>(null)
 const menuRefs = useTemplateRef('menus')
 const menusWithoutIndex = data.value?.filter((item) => item.slug !== '/')
-
+const route = useRoute()
 const { $gsap, $ScrollTrigger } = useNuxtApp()
 let knobTl: gsap.core.Timeline
 let tl: gsap.core.Timeline
@@ -115,11 +115,29 @@ onUnmounted(async () => {
         </NuxtLink>
       </div>
       <ul v-if="data" class="inline-flex items-center gap-12">
-        <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="">
+        <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="relative">
           <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
+          <transition name="underline" mode="out-in">
+            <div
+              v-if="route.path === item.slug"
+              class="underline-border absolute bottom-0 left-0 h-[1px] w-full bg-black"
+            />
+          </transition>
         </li>
       </ul>
       <div ref="chat" class="lets-chat underline">Lets Chat</div>
     </div>
   </nav>
 </template>
+
+<style>
+.underline-enter-active,
+.underline-leave-active {
+  transition: transform 0.2s ease-in-out;
+}
+
+.underline-enter-from,
+.underline-leave-to {
+  transform: scaleX(0);
+}
+</style>

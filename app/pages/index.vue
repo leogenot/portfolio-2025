@@ -28,7 +28,7 @@ watch(
 
 <template>
   <div>
-    <!-- <Hero :title="data.hero" /> -->
-    <pre>data: {{ data }}</pre>
+    <!-- <pre>data: {{ data }}</pre> -->
+    <PageSections :sections="data?.pageBuilder" />
   </div>
 </template>

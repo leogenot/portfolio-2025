@@ -17,19 +17,22 @@ export default defineContentConfig({
                 })),
                 pageBuilder: z.array(z.object({
                     type: z.string(),
-                    title: z.string().optional(),
-                    text: z.string().optional(),
-                    trumpet: z.string().optional(),
-                    indicator: z.string().optional(),
-                    link: z.string().optional(),
-                    medias: z.array(z.object({
-                        type: z.string(),
-                        src: z.string()
-                    })),
-                    projectType: z.string().optional(),
-                    techStack: z.array(z.object({
-                        title: z.string()
-                    })).optional(),
+                    data: z.object({
+                        leftMedia: z.boolean().optional(),
+                        title: z.string().optional(),
+                        text: z.string().optional(),
+                        trumpet: z.string().optional(),
+                        indicator: z.string().optional(),
+                        link: z.string().optional(),
+                        medias: z.array(z.object({
+                            type: z.string(),
+                            src: z.string()
+                        })),
+                        projectType: z.string().optional(),
+                        techStack: z.array(z.object({
+                            title: z.string()
+                        })).optional(),
+                    }),
 
                 })).optional()
             })
@@ -49,22 +52,25 @@ export default defineContentConfig({
                 })),
                 pageBuilder: z.array(z.object({
                     type: z.string(),
-                    title: z.string().optional(),
-                    text: z.string().optional(),
-                    trumpet: z.string().optional(),
-                    indicator: z.string().optional(),
-                    link: z.string().optional(),
-                    medias: z.array(z.object({
-                        type: z.string(),
-                        src: z.string()
-                    })),
-                    projectType: z.string().optional(),
-                    techStack: z.array(z.object({
-                        title: z.string()
-                    })).optional(),
+                    data: z.object({
+                        leftMedia: z.boolean().optional(),
+                        title: z.string().optional(),
+                        text: z.string().optional(),
+                        trumpet: z.string().optional(),
+                        indicator: z.string().optional(),
+                        link: z.string().optional(),
+                        medias: z.array(z.object({
+                            type: z.string(),
+                            src: z.string()
+                        })),
+                        projectType: z.string().optional(),
+                        techStack: z.array(z.object({
+                            title: z.string()
+                        })).optional(),
+                    }),
 
                 })).optional()
             })
-        })
+        }),
     }
 })
