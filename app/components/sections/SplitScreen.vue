@@ -47,7 +47,7 @@ defineProps<{ data: SplitScreenProps }>()
         </p>
       </div>
       <div class="infos flex flex-col gap-2 lg:gap-8">
-        <span v-if="data.projectType" class="text-text-meta font-mono"
+        <span v-if="data.projectType" class="text-text-meta text-dark-grey font-mono"
           >({{ data.projectType }})</span
         >
         <div class="more-infos flex items-end justify-between">
