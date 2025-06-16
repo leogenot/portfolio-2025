@@ -105,9 +105,9 @@ onUnmounted(async () => {
       class="pointer-events-none absolute bottom-0 left-0 flex h-dvh w-screen flex-col items-center justify-between"
     >
       <div
-        class="px-bleed py-bleed pointer-events-auto relative inline-flex w-full justify-between overflow-clip"
+        class="px-bleed py-bleed pointer-events-auto relative inline-flex w-full justify-between"
       >
-        <div class="logo inline-flex items-center gap-1">
+        <div class="logo relative inline-flex items-center gap-1 overflow-clip">
           <NuxtLink ref="knob" to="/" aria-label="Home" class="">
             <div class="knob relative">
               <div class="indicator relative origin-center">
@@ -120,12 +120,91 @@ onUnmounted(async () => {
           </NuxtLink>
         </div>
         <div ref="chat" class="lets-chat underline">Lets Chat</div>
+        <div class="gradient-blur-top" />
       </div>
-      <ul v-if="data" class="px-bleed py-bleed pointer-events-auto inline-flex items-center gap-12">
-        <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="">
-          <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
-        </li>
-      </ul>
+      <div class="bottom-links pointer-events-auto relative w-full">
+        <ul
+          v-if="data"
+          class="px-bleed py-bleed pointer-events-auto relative inline-flex w-full items-center justify-between gap-12"
+        >
+          <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="">
+            <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
+          </li>
+        </ul>
+        <div class="gradient-blur-bottom" />
+      </div>
     </div>
   </nav>
 </template>
+
+<style scoped>
+.gradient-blur-top {
+  --nav-blur: 12px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  pointer-events: none;
+}
+.gradient-blur-top::before,
+.gradient-blur-top::after {
+  position: absolute;
+  inset: 0;
+}
+.gradient-blur-top::before {
+  transition: backdrop-filter 0.3s ease-in-out;
+  content: '';
+  z-index: -1;
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+  backdrop-filter: blur(var(--nav-blur));
+  mask: linear-gradient(
+    to bottom,
+    rgba(31, 31, 35, 1) 0%,
+    rgba(31, 31, 35, 1) 50%,
+    rgba(31, 31, 35, 0) 100%
+  );
+  mask: linear-gradient(
+    to bottom,
+    rgba(31, 31, 35, 1) 0%,
+    rgba(31, 31, 35, 1) 50%,
+    rgba(31, 31, 35, 0) 100%
+  );
+}
+
+.gradient-blur-bottom {
+  --nav-blur: 12px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  pointer-events: none;
+}
+.gradient-blur-bottom::before,
+.gradient-blur-bottom::after {
+  position: absolute;
+  inset: 0;
+}
+.gradient-blur-bottom::before {
+  transition: backdrop-filter 0.3s ease-in-out;
+  content: '';
+  z-index: -1;
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+  backdrop-filter: blur(var(--nav-blur));
+  mask: linear-gradient(
+    to top,
+    rgba(31, 31, 35, 1) 0%,
+    rgba(31, 31, 35, 1) 50%,
+    rgba(31, 31, 35, 0) 100%
+  );
+  mask: linear-gradient(
+    to top,
+    rgba(31, 31, 35, 1) 0%,
+    rgba(31, 31, 35, 1) 50%,
+    rgba(31, 31, 35, 0) 100%
+  );
+}
+</style>

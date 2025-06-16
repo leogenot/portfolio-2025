@@ -127,10 +127,11 @@ onUnmounted(async () => {
       </ul>
       <div ref="chat" class="lets-chat underline">Lets Chat</div>
     </div>
+    <div class="gradient-blur" />
   </nav>
 </template>
 
-<style>
+<style scoped>
 .underline-enter-active,
 .underline-leave-active {
   transition: transform 0.2s ease-in-out;
@@ -139,5 +140,40 @@ onUnmounted(async () => {
 .underline-enter-from,
 .underline-leave-to {
   transform: scaleX(0);
+}
+
+.gradient-blur {
+  --nav-blur: 12px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  pointer-events: none;
+}
+.gradient-blur::before,
+.gradient-blur::after {
+  position: absolute;
+  inset: 0;
+}
+.gradient-blur::before {
+  transition: backdrop-filter 0.3s ease-in-out;
+  content: '';
+  z-index: -1;
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+  backdrop-filter: blur(var(--nav-blur));
+  mask: linear-gradient(
+    to bottom,
+    rgba(31, 31, 35, 1) 50%,
+    rgba(31, 31, 35, 1) 60%,
+    rgba(31, 31, 35, 0) 100%
+  );
+  mask: linear-gradient(
+    to bottom,
+    rgba(31, 31, 35, 1) 50%,
+    rgba(31, 31, 35, 1) 60%,
+    rgba(31, 31, 35, 0) 100%
+  );
 }
 </style>
