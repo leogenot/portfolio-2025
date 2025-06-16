@@ -14,12 +14,6 @@ const target = ref<HTMLElement | null>(null)
 async function cleanupAnimation(): Promise<void> {
   $ScrollTrigger.getById('titleAnimation')?.kill()
 
-  // if (target.value) {
-  //   setTimeout(() => {
-  //     $gsap.set(target.value, { clearProps: 'all' })
-  //   }, 2000)
-  // }
-
   await Promise.resolve()
 }
 
