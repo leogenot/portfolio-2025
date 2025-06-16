@@ -16,11 +16,11 @@
                 "medias": [
                     {
                         "type": "image",
-                        "src": "medias/me.jpg"
+                        "src": "/medias/me.jpg"
                     },
                     {
                         "type": "image",
-                        "src": "medias/climb.jpg"
+                        "src": "/medias/climb.jpg"
                     }
                 ]
             }
@@ -42,10 +42,10 @@
                 "text": "Nature preserve in Rødby.",
                 "media": {
                     "type": "image",
-                    "src": "medias/vildmarken/vildmarken.jpg"
+                    "src": "/medias/vildmarken/vildmarken.jpg"
                 },
                 "projectType": "website",
-                "link": "vildmarken.dk",
+                "link": "https://vildmarken.dk",
                 "techStack": [
                     {
                         "title": "Sanity CMS"
@@ -64,10 +64,10 @@
                 "text": "Research on life with hearing loss.",
                 "media": {
                     "type": "image",
-                    "src": "medias/orca/orca.jpg"
+                    "src": "/medias/orca/orca.jpg"
                 },
                 "projectType": "website",
-                "link": "orca-labs.net",
+                "link": "https://orca-labs.net",
                 "techStack": [
                     {
                         "title": "Worpdress"
@@ -86,10 +86,10 @@
                 "text": "Spring/Summer agency website.",
                 "media": {
                     "type": "image",
-                    "src": "medias/springsummer/springsummer.jpg"
+                    "src": "/medias/springsummer/springsummer.jpg"
                 },
                 "projectType": "website",
-                "link": "springsummer.dk",
+                "link": "https://springsummer.dk",
                 "techStack": [
                     {
                         "title": "Craft CMS"

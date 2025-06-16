@@ -56,13 +56,13 @@ defineProps<{ data: SplitScreenProps }>()
           >
             <li v-for="(item, index) in data.techStack" :key="index">{{ item.title }}</li>
           </ul>
-          <a
+          <NuxtLink
             v-if="data.link"
             :href="data.link"
             target="_blank"
             :aria-label="`Link to ${data.link}`"
             class="text-text-medium lg:text-heading-alt-h5 xl:text-heading-alt-h4 font-sans"
-            >{{ data.link }}</a
+            >{{ data.link }}</NuxtLink
           >
         </div>
       </div>

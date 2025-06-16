@@ -45,7 +45,7 @@
                     "src": "/medias/vildmarken/vildmarken.png"
                 },
                 "projectType": "website",
-                "link": "vildmarken.dk",
+                "link": "https://vildmarken.dk",
                 "techStack": [
                     {
                         "title": "Sanity CMS"
@@ -67,7 +67,7 @@
                     "src": "/medias/orca/orca.png"
                 },
                 "projectType": "website",
-                "link": "orca-labs.net",
+                "link": "https://orca-labs.net",
                 "techStack": [
                     {
                         "title": "Worpdress"
@@ -89,7 +89,7 @@
                     "src": "/medias/springsummer/springsummer.png"
                 },
                 "projectType": "website",
-                "link": "springsummer.dk",
+                "link": "https://springsummer.dk",
                 "techStack": [
                     {
                         "title": "Craft CMS"
