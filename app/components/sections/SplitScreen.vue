@@ -62,7 +62,7 @@ defineProps<{ data: SplitScreenProps }>()
             target="_blank"
             :aria-label="`Link to ${data.link}`"
             class="text-text-medium lg:text-heading-alt-h5 xl:text-heading-alt-h4 font-sans"
-            >{{ data.link }}</NuxtLink
+            >{{ data.linkLabel }}</NuxtLink
           >
         </div>
       </div>

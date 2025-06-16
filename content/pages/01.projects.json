@@ -16,11 +16,11 @@
                 "medias": [
                     {
                         "type": "image",
-                        "src": "/medias/me.jpg"
+                        "src": "/medias/me.png"
                     },
                     {
                         "type": "image",
-                        "src": "/medias/climb.jpg"
+                        "src": "/medias/climb.png"
                     }
                 ]
             }
@@ -42,10 +42,11 @@
                 "text": "Nature preserve in Rødby.",
                 "media": {
                     "type": "image",
-                    "src": "/medias/vildmarken/vildmarken.jpg"
+                    "src": "/medias/vildmarken/vildmarken.png"
                 },
                 "projectType": "website",
                 "link": "https://vildmarken.dk",
+                "linkLabel": "vildmarken.dk",
                 "techStack": [
                     {
                         "title": "Sanity CMS"
@@ -64,10 +65,11 @@
                 "text": "Research on life with hearing loss.",
                 "media": {
                     "type": "image",
-                    "src": "/medias/orca/orca.jpg"
+                    "src": "/medias/orca/orca.png"
                 },
                 "projectType": "website",
                 "link": "https://orca-labs.net",
+                "linkLabel": "orca-labs.net",
                 "techStack": [
                     {
                         "title": "Worpdress"
@@ -86,10 +88,11 @@
                 "text": "Spring/Summer agency website.",
                 "media": {
                     "type": "image",
-                    "src": "/medias/springsummer/springsummer.jpg"
+                    "src": "/medias/springsummer/springsummer.png"
                 },
                 "projectType": "website",
                 "link": "https://springsummer.dk",
+                "linkLabel": "springsummer.dk",
                 "techStack": [
                     {
                         "title": "Craft CMS"
@@ -100,5 +103,5 @@
                 ]
             }
         }
-    ]
+    ],
 }

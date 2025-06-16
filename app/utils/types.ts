@@ -22,6 +22,7 @@ export type SplitScreenProps = {
     }
     projectType: string
     link: string
+    linkLabel: string
     techStack: {
         title: string
     }[]

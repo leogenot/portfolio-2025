@@ -46,6 +46,7 @@
                 },
                 "projectType": "website",
                 "link": "https://vildmarken.dk",
+                "linkLabel": "vildmarken.dk",
                 "techStack": [
                     {
                         "title": "Sanity CMS"
@@ -68,6 +69,7 @@
                 },
                 "projectType": "website",
                 "link": "https://orca-labs.net",
+                "linkLabel": "orca-labs.net",
                 "techStack": [
                     {
                         "title": "Worpdress"
@@ -90,6 +92,7 @@
                 },
                 "projectType": "website",
                 "link": "https://springsummer.dk",
+                "linkLabel": "springsummer.dk",
                 "techStack": [
                     {
                         "title": "Craft CMS"

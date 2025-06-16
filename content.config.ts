@@ -24,6 +24,7 @@ export default defineContentConfig({
                         trumpet: z.string().optional(),
                         indicator: z.string().optional(),
                         link: z.string().optional(),
+                        linkLabel: z.string().optional(),
                         medias: z.array(z.object({
                             type: z.string(),
                             src: z.string()
@@ -56,6 +57,7 @@ export default defineContentConfig({
                         leftMedia: z.boolean().optional(),
                         title: z.string().optional(),
                         text: z.string().optional(),
+                        linkLabel: z.string().optional(),
                         trumpet: z.string().optional(),
                         indicator: z.string().optional(),
                         link: z.string().optional(),
