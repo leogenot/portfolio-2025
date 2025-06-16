@@ -3,7 +3,7 @@ defineProps<{ data: TitleProps }>()
 </script>
 
 <template>
-  <div class="px-bleed flex flex-col gap-24 pt-24 pb-24">
+  <div class="px-bleed flex flex-col gap-12 pt-12 pb-12 lg:gap-24 lg:pt-24 lg:pb-24">
     <div class="trumpet inline-flex w-full justify-between">
       <span v-if="data.trumpet" class="text-text-meta text-dark-grey font-mono lowercase"
         >({{ data.trumpet }})</span
@@ -21,7 +21,7 @@ defineProps<{ data: TitleProps }>()
       </h2>
       <p
         v-if="data.text"
-        class="xl:text-heading-alt-small lg:text-heading-alt-h3 text-heading-alt-h4 font-sans"
+        class="xl:text-heading-alt-h2 lg:text-heading-alt-h3 text-heading-alt-h4 font-sans"
       >
         {{ data.text }}
       </p>

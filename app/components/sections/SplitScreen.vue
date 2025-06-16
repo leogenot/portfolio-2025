@@ -26,10 +26,10 @@ defineProps<{ data: SplitScreenProps }>()
       />
     </div>
     <div
-      class="content p-bleed flex h-full w-full flex-col justify-between gap-9 lg:p-24 xl:p-32"
+      class="content px-bleed flex h-full w-full flex-col justify-between gap-9 py-12 lg:py-24 xl:py-32"
       :class="{
-        'order-0 lg:order-1 lg:col-start-5 lg:col-end-13': data.leftMedia,
-        'order-0 lg:order-0 lg:col-start-1 lg:col-end-9': !data.leftMedia,
+        'order-0 lg:order-1 lg:col-start-5 lg:col-end-12': data.leftMedia,
+        'order-0 lg:order-0 lg:col-start-1 lg:col-end-8': !data.leftMedia,
       }"
     >
       <div class="heading">
