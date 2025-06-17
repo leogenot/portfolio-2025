@@ -122,7 +122,9 @@ onUnmounted(async () => {
             </div>
           </NuxtLink>
         </div>
-        <div ref="chat" class="lets-chat underline opacity-0">Lets Chat</div>
+        <a href="mailto:leogenot@gmail.com" ref="chat" class="lets-chat underline opacity-0"
+          >Lets Chat</a
+        >
         <!-- <div class="gradient-blur-top" /> -->
       </div>
       <div class="bottom-links pointer-events-auto relative w-full">
