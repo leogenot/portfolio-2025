@@ -102,7 +102,7 @@ onUnmounted(async () => {
 <template>
   <nav
     ref="navigation"
-    class="px-bleed text-text-small fixed top-0 left-0 flex h-16 w-full items-end font-mono lowercase"
+    class="px-bleed text-text-small fixed top-0 left-0 z-50 flex h-16 w-full items-end font-mono lowercase"
   >
     <div class="relative inline-flex w-full justify-between overflow-clip">
       <div class="logo inline-flex items-center gap-1">
@@ -113,7 +113,7 @@ onUnmounted(async () => {
                 class="indicator-inner absolute top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#FF5D1F]"
               ></div>
             </div>
-            <div class="h-9 w-9 rounded-full bg-black"></div>
+            <div class="h-9 w-9 rounded-full bg-(--color-text)"></div>
           </div>
         </NuxtLink>
       </div>
@@ -128,7 +128,7 @@ onUnmounted(async () => {
           <transition name="underline" mode="out-in">
             <div
               v-if="route.path === item.slug"
-              class="underline-border absolute bottom-0 left-0 h-[1px] w-full bg-black"
+              class="underline-border absolute bottom-0 left-0 h-[1px] w-full bg-(--color-text)"
             />
           </transition>
         </li>

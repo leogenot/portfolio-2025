@@ -11,5 +11,5 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div ref="square" class="square bg-black" />
+  <div ref="square" class="square bg-(--color-text)" />
 </template>

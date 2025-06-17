@@ -143,6 +143,24 @@
   --spacing-gap: var(--grid-gap);
 }
 
+:root {
+  /* Light Theme */
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
+  --color-muted: var(--color-dark-grey);
+  --color-surface: var(--color-light-grey);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark Theme */
+  :root {
+    --color-background: var(--color-black);
+    --color-text: var(--color-white);
+    --color-muted: var(--color-light-grey);
+    --color-surface: var(--color-dark-grey);
+  }
+}
+
 html {
   --zoom-amount: 0.4;
   font-size: max(16px, calc(16px + 16 * var(--zoom-amount) * (100vw - 1440px) / 1440));
@@ -155,13 +173,13 @@ html {
 body {
   overflow-x: clip;
   width: 100vw;
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 ::selection {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: var(--color-text);
+  color: var(--color-background);
 }
 
 @layer utilities {

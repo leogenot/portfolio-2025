@@ -118,7 +118,7 @@ onUnmounted(async () => {
                   class="indicator-inner absolute top-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#FF5D1F]"
                 ></div>
               </div>
-              <div class="h-9 w-9 rounded-full bg-black"></div>
+              <div class="h-9 w-9 rounded-full bg-(--color-text)"></div>
             </div>
           </NuxtLink>
         </div>

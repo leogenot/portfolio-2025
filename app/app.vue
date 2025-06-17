@@ -22,17 +22,15 @@ watchEffect((onInvalidate) => {
     $gsap.ticker.remove(update)
   })
 })
-
+useColorScheme()
 useHead({
   meta: [
     {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1.0',
     },
-    {
-      name: 'theme-color',
-      content: '#e6e6e6',
-    },
+    { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#f8f8f8' },
+    { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#1a1a1a' },
     {
       name: 'google-site-verification',
       content: 'nKPy2XQG9rBND-W_C_e0a-veDL_ZUmMHei3e12CGeDA',
@@ -43,13 +41,13 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg',
-      href: '/favicon-black.svg',
+      href: '/favicon-light.svg',
       media: '(prefers-color-scheme: light)',
     },
     {
       rel: 'icon',
       type: 'image/svg',
-      href: '/favicon-white.svg',
+      href: '/favicon-dark.svg',
       media: '(prefers-color-scheme: dark)',
     },
   ],

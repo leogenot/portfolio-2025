@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="px-bleed flex flex-col gap-12 pt-12 pb-12 lg:gap-24 lg:pt-24 lg:pb-24">
     <div class="trumpet inline-flex w-full justify-between">
-      <span v-if="data.trumpet" class="text-text-meta text-dark-grey font-mono lowercase"
+      <span v-if="data.trumpet" class="text-text-meta font-mono text-(--color-muted) lowercase"
         >({{ data.trumpet }})</span
       >
       <span v-if="data.indicator" class="text-text-meta font-mono lowercase">{{

@@ -6,7 +6,7 @@ defineProps<{ data: SplitScreenProps }>()
   <div
     class="grid lg:min-h-screen lg:grid-cols-12"
     :class="{
-      'bg-light-grey': data.leftMedia,
+      'bg-(--color-surface)': data.leftMedia,
     }"
   >
     <div
@@ -47,7 +47,7 @@ defineProps<{ data: SplitScreenProps }>()
         </p>
       </div>
       <div class="infos flex flex-col gap-2 lg:gap-8">
-        <span v-if="data.projectType" class="text-text-meta text-dark-grey font-mono"
+        <span v-if="data.projectType" class="text-text-meta font-mono text-(--color-muted)"
           >({{ data.projectType }})</span
         >
         <div class="more-infos flex items-end justify-between">
