@@ -27,7 +27,5 @@ watch(
 </script>
 
 <template>
-  <div>
-    <h2>About me:</h2>
-  </div>
+  <div class=""></div>
 </template>

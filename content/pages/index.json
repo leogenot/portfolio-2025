@@ -35,69 +35,73 @@
             }
         },
         {
-            "type": "stacked-screens",
-            "data": [
-                {
-                    "leftMedia": true,
-                    "title": "Vildmarken",
-                    "text": "Nature preserve in Rødby.",
-                    "media": {
-                        "type": "image",
-                        "src": "/medias/vildmarken/vildmarken.png"
-                    },
-                    "projectType": "website",
-                    "link": "https://vildmarken.dk",
-                    "linkLabel": "vildmarken.dk",
-                    "techStack": [
-                        {
-                            "title": "Sanity CMS"
-                        },
-                        {
-                            "title": "Nuxt.js"
-                        }
-                    ]
+            "type": "split-screen",
+            "data": {
+                "leftMedia": true,
+                "title": "Vildmarken",
+                "text": "Nature preserve in Rødby.",
+                "media": {
+                    "type": "image",
+                    "src": "/medias/vildmarken/vildmarken.png"
                 },
-                {
-                    "leftMedia": false,
-                    "title": "ORCA labs",
-                    "text": "Research on life with hearing loss.",
-                    "media": {
-                        "type": "image",
-                        "src": "/medias/orca/orca.png"
+                "projectType": "website",
+                "link": "https://vildmarken.dk",
+                "linkLabel": "vildmarken.dk",
+                "techStack": [
+                    {
+                        "title": "Sanity CMS"
                     },
-                    "projectType": "website",
-                    "link": "https://orca-labs.net",
-                    "linkLabel": "orca-labs.net",
-                    "techStack": [
-                        {
-                            "title": "Worpdress"
-                        },
-                        {
-                            "title": "Laravel"
-                        }
-                    ]
+                    {
+                        "title": "Nuxt.js"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "split-screen",
+            "data": {
+                "leftMedia": false,
+                "title": "ORCA labs",
+                "text": "Research on life with hearing loss.",
+                "media": {
+                    "type": "image",
+                    "src": "/medias/orca/orca.png"
                 },
-                {
-                    "leftMedia": true,
-                    "title": "Spring / Summer",
-                    "text": "Spring/Summer agency website.",
-                    "media": {
-                        "type": "image",
-                        "src": "/medias/springsummer/springsummer.png"
+                "projectType": "website",
+                "link": "https://orca-labs.net",
+                "linkLabel": "orca-labs.net",
+                "techStack": [
+                    {
+                        "title": "Worpdress"
                     },
-                    "projectType": "website",
-                    "link": "https://springsummer.dk",
-                    "linkLabel": "springsummer.dk",
-                    "techStack": [
-                        {
-                            "title": "Craft CMS"
-                        },
-                        {
-                            "title": "Nuxt.js"
-                        }
-                    ]
-                }
-            ]
+                    {
+                        "title": "Laravel"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "split-screen",
+            "data": {
+                "leftMedia": true,
+                "title": "Spring/Summer",
+                "text": "Spring/Summer agency website.",
+                "media": {
+                    "type": "image",
+                    "src": "/medias/springsummer/springsummer.png"
+                },
+                "projectType": "website",
+                "link": "https://springsummer.dk",
+                "linkLabel": "springsummer.dk",
+                "techStack": [
+                    {
+                        "title": "Craft CMS"
+                    },
+                    {
+                        "title": "Nuxt.js"
+                    }
+                ]
+            }
         }
     ],
     "projects": [
