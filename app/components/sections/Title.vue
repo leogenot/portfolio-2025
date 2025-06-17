@@ -1,116 +1,83 @@
 <script setup lang="ts">
-defineProps<{ data: TitleProps }>()
+defineProps<{
+  data: TitleProps
+}>()
 
 // ------- GSAP ANIMATION -------
-const { $SplitText, $gsap, $ScrollTrigger } = useNuxtApp()
-const textContainer = ref<HTMLElement | null>(null)
-const textTarget = ref<HTMLElement | null>(null)
-const titleContainer = ref<HTMLElement | null>(null)
+const { $SplitText, $gsap } = useNuxtApp()
 const titleTarget = ref<HTMLElement | null>(null)
-const randomId = Math.floor(Math.random() * 1000)
+const textTarget = ref<HTMLElement | null>(null)
 
-const splitTitleInstance = ref<any>(null)
-const splitTextInstance = ref<any>(null)
-const titleTween = ref<any>(null)
-const textTween = ref<any>(null)
+let scrollTriggers: gsap.core.ScrollTrigger[] = []
+let splitInstances: SplitText[] = []
 
-const scrollTriggers: any[] = []
-
-async function cleanupAnimation(): Promise<void> {
-  // Kill all stored ScrollTriggers
-  console.log('scrollTriggers', scrollTriggers)
-  scrollTriggers.forEach((st) => st?.kill())
-  scrollTriggers.length = 0
-
-  // Revert SplitText instances
-  splitTitleInstance.value?.revert()
-  splitTextInstance.value?.revert()
-  splitTitleInstance.value = null
-  splitTextInstance.value = null
-
-  // Kill tweens
-  titleTween.value?.kill()
-  textTween.value?.kill()
-  titleTween.value = null
-  textTween.value = null
-
-  await Promise.resolve()
-}
-
-async function initTitleAnimation() {
-  if (!titleTarget.value || !titleContainer.value) return
-  $gsap.set(titleTarget.value, { opacity: 1 })
-
-  splitTitleInstance.value = $SplitText.create(titleTarget.value, {
-    id: 'titleAnimationSplit',
-    type: 'words,lines',
+function animateSplitText(
+  target: HTMLElement,
+  options: {
+    type?: string
+    linesClass?: string
+    yPercent?: number
+    stagger?: number
+  } = {},
+) {
+  const instance = $SplitText.create(target, {
+    type: options.type || 'words,lines',
+    linesClass: options.linesClass || 'line',
     mask: 'lines',
-    linesClass: 'line',
     autoSplit: true,
-    onSplit: (instance) => {
-      titleTween.value = $gsap.fromTo(
-        instance.words,
-        { yPercent: 120 },
-        {
-          yPercent: 0,
-          stagger: 0.2,
-          scrollTrigger: {
-            id: 'titleAnimation' + randomId,
-            trigger: titleContainer.value,
-            markers: true,
-            start: `top 90%`,
-            end: `bottom top`,
-            toggleActions: 'play reverse play reverse',
-            onEnter: () => {},
-          },
-        },
-      )
-      scrollTriggers.push(titleTween.value.scrollTrigger)
-    },
   })
+
+  splitInstances.push(instance)
+
+  $gsap.set(target, { opacity: 1 })
+
+  const tween = $gsap.fromTo(
+    instance.lines,
+    { yPercent: options.yPercent ?? 100 },
+    {
+      yPercent: 0,
+      ease: 'power2.out',
+      stagger: options.stagger ?? 0.15,
+      duration: 1,
+      scrollTrigger: {
+        trigger: target,
+        start: `top 90%`,
+        end: `bottom top`,
+        toggleActions: 'play reverse play reverse',
+        // markers: true,
+      },
+    },
+  )
+
+  scrollTriggers.push(tween.scrollTrigger!)
 }
 
-async function initTextAnimation() {
-  if (!textTarget.value || !textContainer.value) return
-  $gsap.set(textTarget.value, { opacity: 1 })
-
-  splitTextInstance.value = $SplitText.create(textTarget.value, {
-    id: 'textAnimationSplit',
-    type: 'words,lines',
-    mask: 'lines',
-    linesClass: 'line',
-    autoSplit: true,
-    onSplit: (instance) => {
-      textTween.value = $gsap.fromTo(
-        instance.lines,
-        { yPercent: 120 },
-        {
-          yPercent: 0,
-          stagger: 0.2,
-          scrollTrigger: {
-            id: 'textAnimation' + randomId,
-            trigger: textContainer.value,
-            markers: true,
-            start: `top 90%`,
-            end: `bottom top`,
-            toggleActions: 'play reverse play reverse',
-          },
-        },
-      )
-      scrollTriggers.push(textTween.value.scrollTrigger)
-    },
-  })
-}
-
-onMounted(async () => {
-  await nextTick()
-  await cleanupAnimation()
-  await initTitleAnimation()
-  await initTextAnimation()
+onMounted(() => {
+  if (import.meta.server) return
+  if (titleTarget.value) {
+    animateSplitText(titleTarget.value, {
+      type: 'words,lines',
+      linesClass: 'line',
+      yPercent: -100,
+      stagger: 0.2,
+    })
+  }
+  if (textTarget.value) {
+    animateSplitText(textTarget.value, {
+      type: 'lines',
+      linesClass: 'line',
+      yPercent: -100,
+      stagger: 0.2,
+    })
+  }
 })
 
-onUnmounted(async () => {
-  await cleanupAnimation()
+onBeforeUnmount(() => {
+  scrollTriggers.forEach((trigger) => trigger.kill())
+  scrollTriggers = []
+
+  splitInstances.forEach((inst) => inst.revert?.())
+  splitInstances = []
 })
 </script>
 
@@ -146,7 +113,7 @@ onUnmounted(async () => {
 
 <style scoped>
 .split {
-  /* opacity: 0; */
+  opacity: 0;
   will-change: transform;
 }
 
