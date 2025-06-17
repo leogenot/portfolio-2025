@@ -133,7 +133,9 @@ onUnmounted(async () => {
           </transition>
         </li>
       </ul>
-      <div ref="chat" class="lets-chat underline opacity-0">Lets Chat</div>
+      <a href="mailto:leogenot@gmail.com" ref="chat" class="lets-chat underline opacity-0"
+        >Lets Chat</a
+      >
     </div>
     <div class="gradient-blur" />
   </nav>
