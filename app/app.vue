@@ -29,8 +29,8 @@ useHead({
       name: 'viewport',
       content: 'width=device-width, initial-scale=1.0',
     },
-    { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#f8f8f8' },
-    { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#1a1a1a' },
+    { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#0e1011' },
+    { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#ffffff' },
     {
       name: 'google-site-verification',
       content: 'nKPy2XQG9rBND-W_C_e0a-veDL_ZUmMHei3e12CGeDA',
