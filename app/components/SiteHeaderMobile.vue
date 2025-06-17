@@ -41,6 +41,9 @@ async function initKnobAnimation() {
 
 function initMenusAnimation() {
   tl = $gsap.timeline()
+  $gsap.set(menuRefs.value, { opacity: 1 })
+  $gsap.set(knob.value.$el, { opacity: 1 })
+  $gsap.set(chat.value, { opacity: 1 })
   tl.fromTo(
     knob.value?.$el,
     {
@@ -108,7 +111,7 @@ onUnmounted(async () => {
         class="px-bleed py-bleed pointer-events-auto relative inline-flex w-full justify-between"
       >
         <div class="logo relative inline-flex items-center gap-1 overflow-clip">
-          <NuxtLink ref="knob" to="/" aria-label="Home" class="">
+          <NuxtLink ref="knob" to="/" aria-label="Home" class="opacity-0">
             <div class="knob relative">
               <div class="indicator relative origin-center">
                 <div
@@ -119,7 +122,7 @@ onUnmounted(async () => {
             </div>
           </NuxtLink>
         </div>
-        <div ref="chat" class="lets-chat underline">Lets Chat</div>
+        <div ref="chat" class="lets-chat underline opacity-0">Lets Chat</div>
         <!-- <div class="gradient-blur-top" /> -->
       </div>
       <div class="bottom-links pointer-events-auto relative w-full">
@@ -127,7 +130,7 @@ onUnmounted(async () => {
           v-if="data"
           class="px-bleed py-bleed pointer-events-auto relative inline-flex w-full items-center justify-between gap-12"
         >
-          <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="">
+          <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="opacity-0">
             <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
           </li>
         </ul>

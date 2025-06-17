@@ -41,6 +41,9 @@ async function initKnobAnimation() {
 
 function initMenusAnimation() {
   tl = $gsap.timeline()
+  $gsap.set(menuRefs.value, { opacity: 1 })
+  $gsap.set(knob.value.$el, { opacity: 1 })
+  $gsap.set(chat.value, { opacity: 1 })
   tl.fromTo(
     knob.value?.$el,
     {
@@ -103,7 +106,7 @@ onUnmounted(async () => {
   >
     <div class="relative inline-flex w-full justify-between overflow-clip">
       <div class="logo inline-flex items-center gap-1">
-        <NuxtLink ref="knob" to="/" aria-label="Home" class="">
+        <NuxtLink ref="knob" to="/" aria-label="Home" class="opacity-0">
           <div class="knob relative">
             <div class="indicator relative origin-center">
               <div
@@ -115,7 +118,12 @@ onUnmounted(async () => {
         </NuxtLink>
       </div>
       <ul v-if="data" class="inline-flex items-center gap-12">
-        <li v-for="item in menusWithoutIndex" :key="item.slug" ref="menus" class="relative">
+        <li
+          v-for="item in menusWithoutIndex"
+          :key="item.slug"
+          ref="menus"
+          class="relative opacity-0"
+        >
           <NuxtLink :to="item.slug">{{ item.title }}</NuxtLink>
           <transition name="underline" mode="out-in">
             <div
@@ -125,7 +133,7 @@ onUnmounted(async () => {
           </transition>
         </li>
       </ul>
-      <div ref="chat" class="lets-chat underline">Lets Chat</div>
+      <div ref="chat" class="lets-chat underline opacity-0">Lets Chat</div>
     </div>
     <div class="gradient-blur" />
   </nav>
