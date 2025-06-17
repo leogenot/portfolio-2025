@@ -27,7 +27,7 @@ watch(
 </script>
 
 <template>
-  <div>
+  <div class="max-lg:pb-14">
     <!-- <pre>data: {{ data }}</pre> -->
     <PageSections :sections="data?.pageBuilder" />
   </div>
