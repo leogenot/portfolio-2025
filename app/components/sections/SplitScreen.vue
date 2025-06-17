@@ -51,10 +51,7 @@ defineProps<{ data: SplitScreenProps }>()
           >({{ data.projectType }})</span
         >
         <div class="more-infos flex items-end justify-between">
-          <ul
-            v-if="data.techStack"
-            class="text-text-medium lg:text-heading-alt-h5 xl:text-heading-alt-h4 font-sans"
-          >
+          <ul v-if="data.techStack" class="text-text-medium xl:text-heading-alt-h5 font-mono">
             <li v-for="(item, index) in data.techStack" :key="index">{{ item.title }}</li>
           </ul>
           <NuxtLink
@@ -62,7 +59,7 @@ defineProps<{ data: SplitScreenProps }>()
             :href="data.link"
             target="_blank"
             :aria-label="`Link to ${data.link}`"
-            class="text-text-medium lg:text-heading-alt-h5 xl:text-heading-alt-h4 font-sans"
+            class="text-text-medium xl:text-heading-alt-h5 font-mono"
             >{{ data.linkLabel }}</NuxtLink
           >
         </div>
