@@ -102,7 +102,7 @@ onUnmounted(async () => {
 <template>
   <nav
     ref="navigation"
-    class="text-text-medium sticky bottom-0 flex h-16 w-full items-end font-sans font-semibold"
+    class="text-text-small sticky bottom-0 flex h-16 w-full items-end font-mono"
   >
     <div
       class="pointer-events-none absolute bottom-0 left-0 flex h-dvh w-screen flex-col items-center justify-between"

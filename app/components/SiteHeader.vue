@@ -102,7 +102,7 @@ onUnmounted(async () => {
 <template>
   <nav
     ref="navigation"
-    class="px-bleed text-text-medium fixed top-0 left-0 flex h-16 w-full items-end font-sans font-semibold"
+    class="px-bleed text-text-small fixed top-0 left-0 flex h-16 w-full items-end font-mono lowercase"
   >
     <div class="relative inline-flex w-full justify-between overflow-clip">
       <div class="logo inline-flex items-center gap-1">
