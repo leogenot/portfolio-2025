@@ -53,3 +53,12 @@ export type PageSection =
     | { type: 'double-media'; data: DoubleMediaProps }
     | { type: 'split-screen'; data: SplitScreenProps }
     | { type: 'stacked-screens'; data: StackedScreensProps }
+
+export type Project = {
+    title: string
+    slug: string
+    description: string
+    thumbnail: string
+    projects: Project[]
+    pageBuilder: PageSection[]
+}

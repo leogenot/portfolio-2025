@@ -19,7 +19,7 @@ defineProps<{ data: SplitScreenProps }>()
       <NuxtImg
         v-if="data.media?.type === 'image'"
         :src="data.media.src"
-        sizes="100vw sm:50vw"
+        sizes="100vw sm:70vw"
         format="webp"
         :alt="data.media.src || 'Image alt'"
         class="h-full w-full object-cover object-center"

@@ -1,7 +1,8 @@
 {
-  "title": "Project 2",
-  "slug": "/project-2",
+  "title": "ORCA labs",
+  "slug": "/orca",
   "description": "Project description",
+  "thumbnail": "/medias/orca/orca.png",
   "pageBuilder": [
     {
       "type": "title",
@@ -16,11 +17,11 @@
         "medias": [
           {
             "type": "image",
-            "src": "medias/me.jpg"
+            "src": "/medias/me.png"
           },
           {
             "type": "image",
-            "src": "medias/climb.jpg"
+            "src": "/medias/climb.png"
           }
         ]
       }
@@ -37,11 +38,12 @@
     {
       "type": "split-screen",
       "data": {
+        "leftMedia": true,
         "title": "Vildmarken",
         "text": "Nature preserve in Rødby.",
         "media": {
           "type": "image",
-          "src": "medias/vildmarken/vildmarken.jpg"
+          "src": "/medias/vildmarken/vildmarken.png"
         },
         "projectType": "website",
         "link": "vildmarken.dk",
@@ -58,11 +60,12 @@
     {
       "type": "split-screen",
       "data": {
+        "leftMedia": false,
         "title": "ORCA labs",
         "text": "Research on life with hearing loss.",
         "media": {
           "type": "image",
-          "src": "medias/orca/orca.jpg"
+          "src": "/medias/orca/orca.png"
         },
         "projectType": "website",
         "link": "orca-labs.net",
@@ -79,11 +82,12 @@
     {
       "type": "split-screen",
       "data": {
+        "leftMedia": true,
         "title": "Spring/Summer",
         "text": "Spring/Summer agency website.",
         "media": {
           "type": "image",
-          "src": "medias/springsummer/springsummer.jpg"
+          "src": "/medias/springsummer/springsummer.png"
         },
         "projectType": "website",
         "link": "springsummer.dk",
@@ -97,5 +101,5 @@
         ]
       }
     }
-  ],
+  ]
 }

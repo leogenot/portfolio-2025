@@ -43,13 +43,14 @@ export default defineContentConfig({
             source: 'projects/*.json',
             schema: z.object({
                 title: z.string(),
+                thumbnail: z.string(),
                 slug: z.string(),
                 description: z.string(),
-                hero: z.string(),
                 projects: z.array(z.object({
                     title: z.string(),
+                    thumbnail: z.string(),
                     slug: z.string(),
-                    metaDescription: z.string(),
+                    description: z.string(),
                 })),
                 pageBuilder: z.array(z.object({
                     type: z.string(),

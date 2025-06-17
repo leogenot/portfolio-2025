@@ -1,7 +1,8 @@
 {
-    "title": "Project 1",
-    "slug": "/project-1",
+    "title": "Vildmarken",
+    "slug": "/vildmarken",
     "description": "Project description",
+    "thumbnail": "/medias/vildmarken/vildmarken.png",
     "pageBuilder": [
         {
             "type": "title",
@@ -16,11 +17,11 @@
                 "medias": [
                     {
                         "type": "image",
-                        "src": "medias/me.jpg"
+                        "src": "/medias/me.png"
                     },
                     {
                         "type": "image",
-                        "src": "medias/climb.jpg"
+                        "src": "/medias/climb.png"
                     }
                 ]
             }
@@ -42,7 +43,7 @@
                 "text": "Nature preserve in Rødby.",
                 "media": {
                     "type": "image",
-                    "src": "medias/vildmarken/vildmarken.jpg"
+                    "src": "/medias/vildmarken/vildmarken.png"
                 },
                 "projectType": "website",
                 "link": "vildmarken.dk",
@@ -64,7 +65,7 @@
                 "text": "Research on life with hearing loss.",
                 "media": {
                     "type": "image",
-                    "src": "medias/orca/orca.jpg"
+                    "src": "/medias/orca/orca.png"
                 },
                 "projectType": "website",
                 "link": "orca-labs.net",
@@ -86,7 +87,7 @@
                 "text": "Spring/Summer agency website.",
                 "media": {
                     "type": "image",
-                    "src": "medias/springsummer/springsummer.jpg"
+                    "src": "/medias/springsummer/springsummer.png"
                 },
                 "projectType": "website",
                 "link": "springsummer.dk",
@@ -100,5 +101,5 @@
                 ]
             }
         }
-    ],
+    ]
 }

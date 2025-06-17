@@ -137,7 +137,7 @@ onUnmounted(async () => {
         >Lets Chat</a
       >
     </div>
-    <div class="gradient-blur" />
+    <!-- <div class="gradient-blur" /> -->
   </nav>
 </template>
 
