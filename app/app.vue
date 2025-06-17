@@ -5,8 +5,8 @@ const { $gsap, $ScrollTrigger } = useNuxtApp()
 
 const lenisOptions = computed(() => {
   return {
-    lerp: 0.9,
-    wheelMultiplier: 1,
+    lerp: 0.7,
+    wheelMultiplier: 0.8,
   }
 })
 
