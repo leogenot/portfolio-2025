@@ -29,7 +29,8 @@ onMounted(() => {
     $gsap.set(el.querySelector('.media-container'), { rotation: -index * angle })
   })
 
-  const tween1 = $gsap.to(parentCircleLeft.value, {
+  //Tweens to keep labels aligned and not rotate as you scroll
+  const labelAlign = $gsap.to(parentCircleLeft.value, {
     rotation: -(180 + angle * leftItems.length),
     ease: 'none',
     scrollTrigger: {
@@ -41,7 +42,7 @@ onMounted(() => {
       markers: true,
     },
   })
-  const tween2 = $gsap.to(parentCircleLeft.value.querySelectorAll('.project-link'), {
+  const labelAlign2 = $gsap.to(parentCircleLeft.value.querySelectorAll('.project-link'), {
     rotation: '+=' + (180 + angle * leftItems.length),
     ease: 'none',
     scrollTrigger: {
@@ -53,7 +54,8 @@ onMounted(() => {
     },
   })
 
-  const tween3 = $gsap.to(parentCircleRight.value, {
+  //Tweens to keep medias aligned and not rotate as you scroll
+  const mediaAlign = $gsap.to(parentCircleRight.value, {
     rotation: -(180 + angle * leftItems.length),
     ease: 'none',
     scrollTrigger: {
@@ -64,7 +66,7 @@ onMounted(() => {
       markers: true,
     },
   })
-  const tween4 = $gsap.to(parentCircleRight.value.querySelectorAll('.media-container'), {
+  const mediaAlign2 = $gsap.to(parentCircleRight.value.querySelectorAll('.media-container'), {
     rotation: '+=' + (180 + angle * leftItems.length),
     ease: 'none',
     scrollTrigger: {
@@ -75,7 +77,7 @@ onMounted(() => {
       markers: true,
     },
   })
-  scrollTriggers.push(tween1, tween2, tween3, tween4)
+  scrollTriggers.push(labelAlign, labelAlign2, mediaAlign, mediaAlign2)
 })
 
 onBeforeUnmount(() => {
@@ -120,7 +122,12 @@ onBeforeUnmount(() => {
             :aria-label="project.title"
             class="media-container pointer-events-auto absolute top-0 left-1/2 block h-[16vw] w-[16vw] origin-[0_50%] -translate-y-1/2 overflow-clip rounded-sm object-cover drop-shadow-[0px_4px_24px_rgba(0,0,0,0.13)] lg:h-[12vw] lg:w-[12vw]"
           >
-            <img :src="project.thumbnail" alt="" class="media h-full w-full object-cover" />
+            <img
+              :src="project.thumbnail"
+              alt=""
+              class="media h-full w-full object-cover"
+              sizes="20vw"
+            />
           </NuxtLink>
         </div>
       </div>
