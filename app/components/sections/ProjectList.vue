@@ -89,7 +89,7 @@ onBeforeUnmount(() => {
     <div class="pointer-events-none relative container h-screen overflow-hidden">
       <div
         ref="parentCircleLeft"
-        class="parent-circle parent-circle-left font-display text-heading-alt-h5 lg:text-heading-h1 pointer-events-none absolute top-1/2 right-[52%] h-[160vw] w-[160vw] -translate-y-1/2 lg:h-[80vw] lg:w-[80vw]"
+        class="parent-circle parent-circle-left font-display text-heading-alt-h5 lg:text-heading-h5 xl:text-heading-h3 xxl:text-heading-h1 pointer-events-none absolute top-1/2 right-[52%] h-[160vw] w-[160vw] -translate-y-1/2 lg:h-[80vw] lg:w-[80vw]"
       >
         <div
           v-for="(project, index) in data"
