@@ -122,11 +122,13 @@ onBeforeUnmount(() => {
             :aria-label="project.title"
             class="media-container pointer-events-auto absolute top-0 left-1/2 block h-[16vw] w-[16vw] origin-[0_50%] -translate-y-1/2 overflow-clip rounded-sm object-cover drop-shadow-[0px_4px_24px_rgba(0,0,0,0.13)] lg:h-[12vw] lg:w-[12vw]"
           >
-            <img
+            <NuxtImg
+              v-if="project.thumbnail"
               :src="project.thumbnail"
-              alt=""
-              class="media h-full w-full object-cover"
               sizes="20vw"
+              format="webp"
+              :alt="project.title"
+              class="media h-full w-full object-cover"
             />
           </NuxtLink>
         </div>
