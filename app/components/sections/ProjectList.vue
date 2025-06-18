@@ -10,14 +10,13 @@ const projectRefs = useTemplateRef('thumbnails')
 const pinHeight = ref<HTMLElement | null>(null)
 const parentCircleLeft = ref<HTMLElement | null>(null)
 const parentCircleRight = ref<HTMLElement | null>(null)
+let scrollTriggers: gsap.core.ScrollTrigger[] = []
 
 onMounted(() => {
   if (!pinHeight.value || !parentCircleLeft.value || !parentCircleRight.value) return
   const leftItems = parentCircleLeft.value.querySelectorAll('.circle')
   const rightItems = parentCircleRight.value.querySelectorAll('.circle')
   const angle = 14
-
-  // const pinHeight = document.querySelector('.pin-height')
 
   leftItems.forEach((el, index) => {
     $gsap.set(el, { rotation: index * angle })
@@ -30,52 +29,58 @@ onMounted(() => {
     $gsap.set(el.querySelector('.media-container'), { rotation: -index * angle })
   })
 
-  $gsap.to(parentCircleLeft.value, {
+  const tween1 = $gsap.to(parentCircleLeft.value, {
     rotation: -(180 + angle * leftItems.length),
-    ease: 'none', // Linear movement
+    ease: 'none',
     scrollTrigger: {
-      trigger: pinHeight.value, // Listen to pin-height position
-      pin: '.container', // Pin the container
+      trigger: pinHeight.value,
+      pin: '.container',
       start: 'top top',
       end: 'bottom bottom',
-      scrub: true, // Progression linked to scroll
+      scrub: true,
       markers: true,
     },
   })
-  $gsap.to(parentCircleLeft.value.querySelectorAll('.project-link'), {
+  const tween2 = $gsap.to(parentCircleLeft.value.querySelectorAll('.project-link'), {
     rotation: '+=' + (180 + angle * leftItems.length),
-    ease: 'none', // Linear movement
+    ease: 'none',
     scrollTrigger: {
-      trigger: pinHeight.value, // Listen to pin-height position
+      trigger: pinHeight.value,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: true, // Progression linked to scroll
+      scrub: true,
       markers: true,
     },
   })
 
-  $gsap.to(parentCircleRight.value, {
+  const tween3 = $gsap.to(parentCircleRight.value, {
     rotation: -(180 + angle * leftItems.length),
-    ease: 'none', // Linear movement
+    ease: 'none',
     scrollTrigger: {
-      trigger: pinHeight.value, // Listen to pin-height position
+      trigger: pinHeight.value,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: true, // Progression linked to scroll
+      scrub: true,
       markers: true,
     },
   })
-  $gsap.to(parentCircleRight.value.querySelectorAll('.media-container'), {
+  const tween4 = $gsap.to(parentCircleRight.value.querySelectorAll('.media-container'), {
     rotation: '+=' + (180 + angle * leftItems.length),
-    ease: 'none', // Linear movement
+    ease: 'none',
     scrollTrigger: {
-      trigger: pinHeight.value, // Listen to pin-height position
+      trigger: pinHeight.value,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: true, // Progression linked to scroll
+      scrub: true,
       markers: true,
     },
   })
+  scrollTriggers.push(tween1, tween2, tween3, tween4)
+})
+
+onBeforeUnmount(() => {
+  scrollTriggers.forEach((trigger) => trigger.kill())
+  scrollTriggers = []
 })
 </script>
 
