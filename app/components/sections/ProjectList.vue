@@ -27,7 +27,7 @@ onMounted(() => {
   rightItems.forEach((el, index) => {
     $gsap.set(el, { rotation: index * angle })
     // Negative angle for the child
-    $gsap.set(el.querySelector('.media'), { rotation: -index * angle })
+    $gsap.set(el.querySelector('.media-container'), { rotation: -index * angle })
   })
 
   $gsap.to(parentCircleLeft.value, {
@@ -65,7 +65,7 @@ onMounted(() => {
       markers: true,
     },
   })
-  $gsap.to(parentCircleRight.value.querySelectorAll('.media'), {
+  $gsap.to(parentCircleRight.value.querySelectorAll('.media-container'), {
     rotation: '+=' + (180 + angle * leftItems.length),
     ease: 'none', // Linear movement
     scrollTrigger: {
@@ -80,193 +80,45 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="pinHeight" class="pin-height pointer-events-none">
-    <div class="pointer-events-none container">
+  <div ref="pinHeight" class="pin-height pointer-events-none h-[500vh]">
+    <div class="pointer-events-none relative container h-screen overflow-hidden">
       <div
         ref="parentCircleLeft"
-        class="parent-circle parent-circle-left font-display text-heading-h1 pointer-events-none"
+        class="parent-circle parent-circle-left font-display text-heading-alt-h5 lg:text-heading-h1 pointer-events-none absolute top-1/2 right-[52%] h-[160vw] w-[160vw] -translate-y-1/2 lg:h-[80vw] lg:w-[80vw]"
       >
         <div
           v-for="(project, index) in data"
           ref="titles"
           :key="index"
-          class="circle pointer-events-none"
+          class="circle pointer-events-none absolute inset-0"
         >
           <NuxtLink
             :to="project.slug"
             :aria-label="project.title"
-            class="label project-link pointer-events-auto"
-            >{{ project.title }}</NuxtLink
-          >
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="titles"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink
-            :to="project.slug"
-            :aria-label="project.title"
-            class="label project-link pointer-events-auto"
-            >{{ project.title }}</NuxtLink
-          >
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="titles"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink
-            :to="project.slug"
-            :aria-label="project.title"
-            class="label project-link pointer-events-auto"
-            >{{ project.title }}</NuxtLink
-          >
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="titles"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink
-            :to="project.slug"
-            :aria-label="project.title"
-            class="label project-link pointer-events-auto"
-            >{{ project.title }}</NuxtLink
-          >
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="titles"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink
-            :to="project.slug"
-            :aria-label="project.title"
-            class="label project-link pointer-events-auto"
+            class="label project-link pointer-events-auto absolute top-full right-1/2 origin-[100%_50%] -translate-y-1/2 whitespace-nowrap"
             >{{ project.title }}</NuxtLink
           >
         </div>
       </div>
-      <div ref="parentCircleRight" class="parent-circle parent-circle-right pointer-events-none">
+      <div
+        ref="parentCircleRight"
+        class="parent-circle parent-circle-right pointer-events-none absolute top-1/2 left-[52%] h-[160vw] w-[160vw] -translate-y-1/2 lg:h-[80vw] lg:w-[80vw]"
+      >
         <div
           v-for="(project, index) in data"
           ref="thumbnails"
           :key="index"
-          class="circle pointer-events-none"
+          class="circle pointer-events-none absolute inset-0"
         >
-          <NuxtLink :to="project.slug" :aria-label="project.title" class="pointer-events-auto">
-            <img :src="project.thumbnail" alt="" class="media" />
-          </NuxtLink>
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="thumbnails"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink :to="project.slug" :aria-label="project.title" class="pointer-events-auto">
-            <img :src="project.thumbnail" alt="" class="media" />
-          </NuxtLink>
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="thumbnails"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink :to="project.slug" :aria-label="project.title" class="pointer-events-auto">
-            <img :src="project.thumbnail" alt="" class="media" />
-          </NuxtLink>
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="thumbnails"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink :to="project.slug" :aria-label="project.title" class="pointer-events-auto">
-            <img :src="project.thumbnail" alt="" class="media" />
-          </NuxtLink>
-        </div>
-        <div
-          v-for="(project, index) in data"
-          ref="thumbnails"
-          :key="index"
-          class="circle pointer-events-none"
-        >
-          <NuxtLink :to="project.slug" :aria-label="project.title" class="pointer-events-auto">
-            <img :src="project.thumbnail" alt="" class="media" />
+          <NuxtLink
+            :to="project.slug"
+            :aria-label="project.title"
+            class="media-container pointer-events-auto absolute top-0 left-1/2 block h-[16vw] w-[16vw] origin-[0_50%] -translate-y-1/2 overflow-clip rounded-sm object-cover drop-shadow-[0px_4px_24px_rgba(0,0,0,0.13)] lg:h-[12vw] lg:w-[12vw]"
+          >
+            <img :src="project.thumbnail" alt="" class="media h-full w-full object-cover" />
           </NuxtLink>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<style>
-.pin-height {
-  height: 500vh;
-}
-.container {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-.parent-circle {
-  width: 80vw;
-  height: 80vw;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-.parent-circle-left {
-  right: 52%;
-}
-.parent-circle-right {
-  left: 52%;
-}
-.circle {
-  position: absolute;
-  inset: 0;
-}
-.label {
-  position: absolute;
-  right: 50%;
-  top: 100%;
-  transform: translate(0, -50%);
-  transform-origin: 100% 50%;
-  white-space: nowrap;
-}
-.media {
-  width: 12vw;
-  height: 12vw;
-  display: block;
-  object-fit: cover;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(0, -50%);
-  transform-origin: 0 50%;
-  border-radius: 0.8vw;
-  filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.13));
-}
-
-@media (max-width: 768px) {
-  .parent-circle {
-    width: 160vw;
-    height: 160vw;
-  }
-  .label {
-    font-size: 6vw;
-  }
-  .media {
-    width: 16vw;
-    height: 16vw;
-  }
-}
-</style>
