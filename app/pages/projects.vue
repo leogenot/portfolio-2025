@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { SectionsProjectList } from '#components'
+
 const { data, error, status } = await useAsyncData(() =>
   queryCollection('page').path('/pages/projects').first(),
 )
@@ -27,7 +29,5 @@ watch(
 </script>
 
 <template>
-  <div>
-    <h2>Projects:</h2>
-  </div>
+  <div><SectionsProjectList /></div>
 </template>
